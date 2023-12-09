@@ -1,0 +1,106 @@
+<nav class="navbar">
+  <img class="logo" src="/assets/images/logo.png" alt="Logo">
+
+  <p class="text">ToDo List App</p>
+  <div class="nav-btn">
+    <!-- <span>Hey</span> -->
+    <button mat-raised-button color="primary" *ngIf="dataService.loggedIn()" (click) = "dataService.logoutuser()" >LogOut</button>
+  </div>
+
+</nav>
+
+<div class="heading-section">
+  <h1 class="title">List of Todo's</h1>
+</div>
+
+<div class='container'>
+  <div class="task-container">
+  <form [formGroup]="todoForm">
+    <input class="add-todo-box" type="text" placeholder="Enter your task here..." formControlName="taskname">
+    <button color=primary mat-raised-button (click)="addTask()">
+      <mat-icon>add</mat-icon>
+      Add
+    </button>
+  </form>
+</div>
+
+
+<div class="todo">
+  <p class="taskhead">List of Tasks:</p>
+  <button mat-raised-button color="primary" class="btn" (click)="getAllTask()">Show All Task</button>
+
+   <!-- {{taskArr.results | json}} -->
+<!-- <div class="new-data">
+  <table class="add-data">
+    <thead>
+      <tr>
+        <th>Task Name</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr *ngIf= "newTaskAdded" >
+        <td><span>{{newTask.taskname}}</span></td>
+        <td><span><button (click)="openDialog(newTask)">
+                    <mat-icon>edit</mat-icon>
+                  </button>
+            </span>
+        </td>
+        <td>
+          <span>
+            <button (click)="deleteTask(newTask)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </span>
+      </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+-->
+
+
+<!-- Table for full task list -->
+
+</div>
+   <div class="table">
+    <table class="table-head"  *ngIf = "showAllTask">
+      <thead>
+        <tr>
+          <th>Task Id</th>
+          <th>Task Name</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr *ngFor="let task of taskArr.results;">
+          <td><span>{{task.task_id}}</span></td>
+          <td><span>{{task.task_name}}</span></td>
+          <td><span><button mat-icon-button color="primary" (click)="openUpdateTaskDialog(task)">
+           <mat-icon >edit</mat-icon>
+                    </button>
+              </span>
+          </td>
+          <td>
+            <span>
+              <button mat-icon-button color="warn" (click)="deleteTask(task)">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </span>
+        </td>
+        </tr>
+      </tbody>
+    </table>
+   </div>
+<div>
+
+
+</div>
+</div>
+
+
+

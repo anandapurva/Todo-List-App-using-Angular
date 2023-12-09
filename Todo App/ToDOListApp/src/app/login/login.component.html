@@ -1,0 +1,27 @@
+<div class="login-container">
+  <h1>Login</h1>
+  <form method="POST" [formGroup]="loginForm">
+    <label for="email">Enter Registered Email</label>
+    <input type="email" id="email" placeholder="Enter Email Address" required formControlName="email"><br>
+    <span *ngIf="loginForm.controls['email'] && loginForm.controls['email'].invalid && loginForm.controls['email'].touched" style="color: red;">Email is
+        invalid</span><br>
+    <label for="password">Enter Password:</label>
+      <input type="password" id="password" placeholder="Password" required formControlName="password"><br>
+      <span *ngIf="loginForm.controls['password'] && loginForm.controls['password'].invalid && loginForm.controls['password'].touched" style="color: red;">Password is
+        incorrect</span><br>
+      <input type="submit" (click)="userLogin()" value="Login">
+  </form>
+
+ <p>Don't have an account yet? <br>
+  <button routerLink="/signup">Create a TO.DO&#x2705; account </button>
+</p>
+</div>
+
+<!-- <span class="example-pizza-party" matSnackBarLabel>
+  User not registered!!!
+</span>
+<span matSnackBarActions>
+  <button mat-button matSnackBarAction (click)="snackBarRef.dismissWithAction()">
+    <mat-icon>close</mat-icon>
+  </button>
+</span> -->

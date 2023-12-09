@@ -1,0 +1,22 @@
+<div class="signup-container">
+  <h1>SignUp - It's Free</h1>
+  <form method="POST" [formGroup]="signUpForm">
+    <label for="username">Enter your name</label>
+    <input type="text" id="username" placeholder="Username" required formControlName="username"><br>
+    <span *ngIf="signUpForm.controls['username'] && signUpForm.controls['username'].invalid && signUpForm.controls['username'].touched" style="color: red;">Username is
+        invalid</span><br>
+    <label for="email">Enter Email Address</label>
+    <input type="email" id="email" placeholder="Email Address" required formControlName="email"><br>
+    <span *ngIf="signUpForm.controls['email'] && signUpForm.controls['email'].invalid && signUpForm.controls['email'].touched" style="color: red;">Email is
+        invalid</span><br>
+    <label for="password">Enter Password:</label>
+      <input type="password" id="password" placeholder="Password" required formControlName="password"><br>
+      <span *ngIf="signUpForm.controls['password'] && signUpForm.controls['password'].invalid && signUpForm.controls['password'].touched" style="color: red;">Password is
+        incorrect</span><br>
+      <input (click)="userSignup()" type="submit" value="Sign Up">
+  </form>
+
+ <p>Have an account already? <br>
+  <button routerLink="/login">Login to TO.DO&#x2705; account </button>
+</p>
+</div>

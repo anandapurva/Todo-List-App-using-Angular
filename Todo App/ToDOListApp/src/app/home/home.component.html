@@ -1,0 +1,25 @@
+
+   <nav class="navbar">
+      <img class="logo" src="/assets/images/logo.png" alt="Logo">
+
+      <p class="text">ToDo List App</p>
+      <div class="nav-btn">
+        <button mat-raised-button color="primary" routerLink="/login" *ngIf="!dataService.loggedIn()">Login</button>
+        <button mat-raised-button color="warn" routerLink="/signup" *ngIf="!dataService.loggedIn()">SignUp</button>
+        <button mat-raised-button color="primary" style="cursor: pointer;" *ngIf="dataService.loggedIn()" (click) = "dataService.logoutuser()" >LogOut</button>
+      </div>
+
+  </nav>
+
+<div class="content">
+    <span class="content-text">manage your task and everything with <u>ToDo List</u></span>
+</div>
+<div class="content">
+   <img class="img" src="/assets/images/discussion.png" alt="image">
+</div>
+<p class="msg">when you are overwhelmed by the amount of work you have on your plate, stop and rethink.</p>
+
+
+
+
+

@@ -1,0 +1,18 @@
+<div mat-dialog-title>
+
+  <h1>Update Task</h1>
+</div>
+<div mat-dialog-content>
+
+      <!-- <input matInput type="text" id="edit" #id name="edit"> -->
+
+
+  <mat-form-field appearance="outline">
+    <mat-label>Task Name</mat-label>
+    <input matInput #id  value={{data.task_name}}>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions class="action">
+  <button mat-raised-button mat-dialog-close (click)="close()">Close</button>
+  <button mat-raised-button color="primary" (click)="save(id.value)">Update</button>
+</div>
