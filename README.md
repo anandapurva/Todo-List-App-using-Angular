@@ -24,7 +24,7 @@ Before you begin, ensure you have met the following requirements:
   
 ## Getting Started
 1. Clone the repository:
-  git clone https://github.com/your-username/todo-list-app.git
+  git clone [https://github.com/your-username/Todo-List-App-using-Angular.git]
 cd todo-list-app
 2. Install Dependencies:
     - Install Angular dependencies: 
